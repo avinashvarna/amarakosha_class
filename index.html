@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vesper+Libre:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <title>&bull; Audio Alignment &bull;</title>
+    <style>
+        body {
+            font-family: 'Vesper Libre', serif;
+        }
+        audio {
+            display: block;
+            width: min(100%, 60rem);
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container-fluid p-3">
+    <div class="row">
+        
+        <div class="col-sm-3" id="column-navigation">
+    <div class="fs-4 accordion rounded overflow-auto" id="corpus_list">
+        
+        
+        
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button " type="button"
+                    data-bs-toggle="collapse" data-bs-target="#chapter_list_amarakosha"
+                    aria-expanded="True" aria-controls="chapter_list_amarakosha">
+                    अमरकोषः
+                </button>
+            </div>
+            <div id="chapter_list_amarakosha"
+                class="list-group list-group-flush overflow-auto collapse show"
+                data-parent="#corpus_list">
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/1.1/">
+                    1.1: स्वर्गवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/1.2/">
+                    1.2: व्योमवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/1.3/">
+                    1.3: दिग्वर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/1.4/">
+                    1.4: कालवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/1.5/">
+                    1.5: धीवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/1.6/">
+                    1.6: शब्दादिवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/1.7/">
+                    1.7: नाट्यवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/1.8/">
+                    1.8: पातालभोगिवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/1.9/">
+                    1.9: नरकवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/1.10/">
+                    1.10: वारिवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/2.1/">
+                    2.1: भूमिवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/2.2/">
+                    2.2: पुरवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/2.3/">
+                    2.3: शैलवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/2.4/">
+                    2.4: वनौषधिवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/2.5/">
+                    2.5: सिंहादिवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/2.6/">
+                    2.6: मनुष्यवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/2.7/">
+                    2.7: ब्रह्मवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/2.8/">
+                    2.8: क्षत्रियवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/2.9/">
+                    2.9: वैश्यवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/2.10/">
+                    2.10: शूद्रवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/3.1/">
+                    3.1: विशेष्यनिघ्नवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/3.2/">
+                    3.2: सङ्कीर्णवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/3.3/">
+                    3.3: नानार्थवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/3.4/">
+                    3.4: अव्ययवर्गः
+                </a>
+                
+                <a class="list-group-item list-group-item-action "
+                    href="/amarakosha_class/3.5/">
+                    3.5: लिङ्गादिसंग्रहवर्गः
+                </a>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+        
+        <div class="col-sm" id="column-text">
+            
+            <div class="card mb-2">
+                <div class="card-header lead">
+                    About
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Presented here, are text-aligned Sanskrit recitations with a friendly interface.</li>
+                        <li>Use the accordion menu on the left to navigate through corpus.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="row pb-2">
+                <div class="col-sm">
+                    <div class="card">
+                        <div class="card-header lead">
+                            अमरकोषः
+                        </div>
+                        <div class="card-body">
+                            Text Source: <a href='https://github.com/aupasana/amara-quiz/blob/master/database/amara_mula.utf8'>https://github.com/aupasana/amara-quiz/blob/master/database/amara_mula.utf8</a>
+<br>
+Audio Source: <a href='https://archive.org/details/AmaraKoshahAudio'>https://archive.org/details/AmaraKoshahAudio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+<script>
+    // Elements
+    const column_navigation = document.querySelector('#column-navigation');
+    const column_text = document.querySelector('#column-text');
+    const corpus_list = document.querySelector('#corpus_list');
+    const text_container = document.querySelector('#text-container');
+    const active_element = document.querySelector('.active');
+
+    // Condition
+    // If the columns are rendered side-by-side, i.e. view port can accommodate both
+    const large_display = column_navigation.getBoundingClientRect().top == column_text.getBoundingClientRect().top;
+    const rows_to_display = (large_display) ? 5 : 3;
+
+    // Functions
+    function occupy_available_height(element) {
+        /* Occupy available height on the client's screen */
+        if (!element) {
+            return false;
+        }
+        // Get the distance from the top and add 20px for the padding
+        var max_height = element.getBoundingClientRect().top + 20;
+        var available_height = "calc(100vh - " + max_height + "px)";
+        element.style.height = available_height;
+        return true;
+    }
+
+    function limit_corpus_height(element) {
+        const row_height = element.querySelector('.list-group-item').clientHeight;
+        const max_height = rows_to_display * row_height;
+        const current_height = element.querySelector('.list-group').clientHeight;
+        // console.log(`current_height = ${current_height}, max_height = ${max_height}`);
+        if (current_height > max_height) {
+            element.querySelector('.list-group').style.height = `${max_height}px`;
+        }
+    }
+
+    // Actions
+    if (large_display) {
+        occupy_available_height(corpus_list);
+        occupy_available_height(text_container);
+    } else {
+        column_text.classList.add('pt-3');
+    }
+	/*
+    for (const element of document.getElementsByClassName('accordion-item')) {
+        limit_corpus_height(element);
+    }
+    for (const element of document.getElementsByClassName('accordion-item')) {
+        element.addEventListener('shown.bs.collapse', function() {
+            limit_corpus_height(element);
+        });
+    }*/
+    if (active_element) {
+        active_element.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }
+</script>
+
+
+
+</body>
+</html>
