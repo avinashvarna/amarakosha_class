@@ -1,0 +1,149 @@
+{% include "header.html" %}
+<div class="container-fluid p-3">
+    <div class="row">
+        {% if data.accordion %}
+        {% include "accordion.html" %}
+        {% endif %}
+        <div class="col-sm" id="column-text">
+            {% if data.chapter %}
+            <div class="card d-flex flex-column">
+                <div class="card-header lead d-flex flex-row justify-content-between">
+					<div class="col-sm-3">
+						{% if data.prev_chapter %}
+						<a class="nav-link" href="{{data.prev_chapter | safe}}">
+							<i class="bi bi-skip-backward-btn"></i> Prev
+						</a>
+						{% endif %}
+					</div>
+					<div class="col text-center">
+						{{data.chapter.name}}
+					</div>
+					<div class="justify-content-end">
+						{% if data.next_chapter %}
+						<a class="nav-link" href="{{data.next_chapter | safe}}">
+							Next <i class="bi bi-skip-forward-btn"></i>
+						</a>
+						{% endif %}
+					</div>
+				</div>
+                <div id="audio-container" class="card-body bg-light border-bottom sticky-top">
+                    <div class="row">
+                        <div class="col-sm">
+                            <audio controls id="audio" src="{{data.audio}}"></audio>
+                        </div>
+                    </div>
+                </div>
+                <div id="text-container" class="card-body overflow-auto">
+                    {% include "text.html" %}
+                </div>
+				<div class="card-footer d-flex flex-row justify-content-between">
+					<div class="col-sm-3">
+						{% if data.prev_chapter %}
+						<a class="nav-link" href="{{data.prev_chapter | safe}}">
+							<i class="bi bi-skip-backward-btn"></i> Prev
+						</a>
+						{% endif %}
+					</div>
+					<div class="justify-content-end">
+						{% if data.next_chapter %}
+						<a class="nav-link" href="{{data.next_chapter | safe}}">
+							Next <i class="bi bi-skip-forward-btn"></i>
+						</a>
+						{% endif %}
+					</div>
+            </div>
+            {% else %}
+            <div class="card mb-2">
+                <div class="card-header lead">
+                    About
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Presented here, are text-aligned Sanskrit recitations with a friendly interface.</li>
+                        <li>Use the accordion menu on the left to navigate through corpus.</li>
+                    </ul>
+                </div>
+            </div>
+            {% for corpus in data.corpora.values() %}
+            <div class="row pb-2">
+                <div class="col-sm">
+                    <div class="card">
+                        <div class="card-header lead">
+                            {{corpus.name}}
+                        </div>
+                        <div class="card-body">
+                            {{corpus.description | safe}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% if data.accordion %}
+<script>
+    // Elements
+    const column_navigation = document.querySelector('#column-navigation');
+    const column_text = document.querySelector('#column-text');
+    const corpus_list = document.querySelector('#corpus_list');
+    const text_container = document.querySelector('#text-container');
+    const active_element = document.querySelector('.active');
+
+    // Condition
+    // If the columns are rendered side-by-side, i.e. view port can accommodate both
+    const large_display = column_navigation.getBoundingClientRect().top == column_text.getBoundingClientRect().top;
+    const rows_to_display = (large_display) ? 5 : 3;
+
+    // Functions
+    function occupy_available_height(element) {
+        /* Occupy available height on the client's screen */
+        if (!element) {
+            return false;
+        }
+        // Get the distance from the top and add 20px for the padding
+        var max_height = element.getBoundingClientRect().top + 20;
+        var available_height = "calc(100vh - " + max_height + "px)";
+        element.style.height = available_height;
+        return true;
+    }
+
+    function limit_corpus_height(element) {
+        const row_height = element.querySelector('.list-group-item').clientHeight;
+        const max_height = rows_to_display * row_height;
+        const current_height = element.querySelector('.list-group').clientHeight;
+        // console.log(`current_height = ${current_height}, max_height = ${max_height}`);
+        if (current_height > max_height) {
+            element.querySelector('.list-group').style.height = `${max_height}px`;
+        }
+    }
+
+    // Actions
+    if (large_display) {
+        occupy_available_height(corpus_list);
+        occupy_available_height(text_container);
+    } else {
+        column_text.classList.add('pt-3');
+    }
+	/*
+    for (const element of document.getElementsByClassName('accordion-item')) {
+        limit_corpus_height(element);
+    }
+    for (const element of document.getElementsByClassName('accordion-item')) {
+        element.addEventListener('shown.bs.collapse', function() {
+            limit_corpus_height(element);
+        });
+    }*/
+    if (active_element) {
+        active_element.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }
+</script>
+{% endif %}
+{% if data.chapter %}
+<script src="{{url_for('static', filename='js/align.js')}}"></script>
+{% endif %}
+{% include "footer.html" %}
